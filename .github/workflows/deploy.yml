@@ -32,4 +32,4 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan $SERVER_HOST >> ~/.ssh/known_hosts
-          scp -r --delete .vitepress/dist $SERVER_USER@$SERVER_HOST:/www/wwwroot/default
+          rsync -avz --delete .vitepress/dist $SERVER_USER@$SERVER_HOST:/www/wwwroot/default
