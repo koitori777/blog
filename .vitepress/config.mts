@@ -3,27 +3,19 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/blog/",
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "koitori777",
+  description:
+    "A personal blog about programming, web development, and other stuff.",
+  srcDir: "src",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
+    nav: [{ text: "导航", link: "/" }],
 
-    sidebar: [
-      {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
-      },
-    ],
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/koitori777" }],
+    aside: true,
+    outline: {
+      level: [1, 2],
+      label: "目录",
+    },
   },
 });

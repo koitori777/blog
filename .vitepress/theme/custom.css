@@ -1,0 +1,12 @@
+.my-layout{
+    --vp-layout-max-width: 1650px;
+    .container{
+        max-width: var(--vp-layout-max-width) !important;
+    }
+    #VPContent{
+        background-color: var(--vp-c-bg-soft);
+        .content,.content-container{
+            max-width: 100% !important;
+        }
+    }
+}
