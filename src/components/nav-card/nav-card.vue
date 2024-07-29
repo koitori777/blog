@@ -2,7 +2,7 @@
     <a class="nav-card" :href="link" target="_blank" rel="noopener noreferrer">
         <article>
             <div class="header">
-                <img v-if="!imgLoadError" :src="iconUrl" @error="handleError"></img>
+                <img v-if="iconUrl && !imgLoadError" :src="iconUrl" @error="handleError"></img>
                 <h2 :title="name">{{ name }}</h2>
             </div>
             <p :title="description">{{ description }}</p>
@@ -10,7 +10,7 @@
     </a>
 </template>
 <script setup lang="ts">
-import { computed, ref, toRefs } from 'vue';
+import { onMounted, ref, toRefs } from 'vue';
 import { NavSite } from '../../types'
 import { withBase } from 'vitepress';
 
@@ -20,17 +20,21 @@ const { icon, name, description, link } = toRefs(props.site)
 
 const imgLoadError = ref(false)
 
-const iconUrl = computed(() => {
-    if (icon?.value) return withBase(icon.value)
-    return link.value.replace(/^(https?:\/\/[^\/]+)\/.*/, `$1/favicon.ico?t=${Date.now()}`)
-})
+const iconUrl = ref('')
+if (icon?.value) {
+    iconUrl.value = withBase(icon.value)
+}
 
 
-const handleError = (event: Event) => {
-    const img = event.target as HTMLImageElement
-    img.src = ''
+const handleError = () => {
     imgLoadError.value = true
 }
+
+onMounted(() => {
+    if (iconUrl.value === '') {
+        iconUrl.value = link.value.replace(/^(https?:\/\/[^\/]+)\/.*/, `$1/favicon.ico?t=${Date.now()}`)
+    }
+})
 
 </script>
 <style scoped lang="scss">
