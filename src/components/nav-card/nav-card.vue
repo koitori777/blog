@@ -22,7 +22,7 @@ const imgLoadError = ref(false)
 
 const iconUrl = computed(() => {
     if (icon?.value) return withBase(icon.value)
-    return link.value.replace(/^(https?:\/\/[^\/]+)\/.*/, '$1/favicon.ico')
+    return link.value.replace(/^(https?:\/\/[^\/]+)\/.*/, `$1/favicon.ico?t=${Date.now()}`)
 })
 
 
