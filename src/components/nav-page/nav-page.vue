@@ -1,5 +1,5 @@
 <template>
-    <div class="nav-category" v-for="nav in navs">
+    <div class="nav-category" v-for="nav in navsData">
         <h1 :id="nav.category">{{ nav.category }}
             <a :href="nav.category"></a>
         </h1>
@@ -10,8 +10,11 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import NavCard from '../nav-card/nav-card.vue'
 import navs from './navs.json'
+
+const navsData = ref(navs)
 </script>
 
 
@@ -26,7 +29,6 @@ import navs from './navs.json'
     .nav-sites {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-template-rows: repeat(200px);
         grid-gap: 30px;
     }
 }

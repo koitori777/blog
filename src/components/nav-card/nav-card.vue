@@ -2,35 +2,34 @@
     <a class="nav-card" :href="link" target="_blank" rel="noopener noreferrer">
         <article>
             <div class="header">
-                <img :src="getIcon" @error="handleError"></img>
-                <h2>{{ name }}</h2>
+                <img v-if="!imgLoadError" :src="iconUrl" @error="handleError"></img>
+                <h2 :title="name">{{ name }}</h2>
             </div>
-            <p>{{ description }}</p>
+            <p :title="description">{{ description }}</p>
         </article>
     </a>
 </template>
 <script setup lang="ts">
-import { computed, handleError, toRefs } from 'vue';
+import { computed, ref, toRefs } from 'vue';
 import { NavSite } from '../../types'
 import { withBase } from 'vitepress';
+
 const props = defineProps<{ site: NavSite }>()
 
 const { icon, name, description, link } = toRefs(props.site)
 
-const getIcon = computed(() => {
+const imgLoadError = ref(false)
+
+const iconUrl = computed(() => {
     if (icon?.value) return withBase(icon.value)
-    const pathReg = /\/[^/]*$/
-    if (link.value.match(pathReg)) {
-        return link.value.replace(pathReg, '/favicon.ico')
-    } else {
-        return link.value + '/favicon.ico'
-    }
-}
-)
+    return link.value.replace(/^(https?:\/\/[^\/]+)\/.*/, '$1/favicon.ico')
+})
+
 
 const handleError = (event: Event) => {
     const img = event.target as HTMLImageElement
     img.src = ''
+    imgLoadError.value = true
 }
 
 </script>
@@ -43,6 +42,7 @@ const handleError = (event: Event) => {
     background: var(--vp-c-bg);
     border-radius: 15px;
     color: var(--vp-c-text-1);
+    height: 140px;
 
     &:hover {
         cursor: pointer;
@@ -50,25 +50,50 @@ const handleError = (event: Event) => {
         background: var(--vp-c-bg-soft);
     }
 
+    article {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
     .header {
         display: flex;
         align-items: center;
-
+        margin-bottom: 10px;
 
         img {
             margin-right: 10px;
             height: auto;
             width: 24px;
+            flex-grow: 0;
         }
 
         h2 {
             margin: 0;
             padding: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 20px;
         }
     }
 
     p {
+        margin: 0;
+        font-size: 14px;
         color: var(--vp-c-text-2);
+        overflow: hidden;
+        flex-grow: 0;
+        display: -webkit-box;
+        /* 将容器设置为弹性盒模型 */
+        -webkit-box-orient: vertical;
+        /* 垂直排列子元素 */
+        -webkit-line-clamp: 2;
+        /* 设置显示的行数 */
+        overflow: hidden;
+        /* 隐藏溢出部分 */
+        width: 100%;
+        /* 设置容器宽度 */
     }
 
 }
