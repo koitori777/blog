@@ -2,7 +2,7 @@
     <a class="nav-card" :href="link" target="_blank" rel="noopener noreferrer">
         <article>
             <div class="header">
-                <img v-if="iconUrl && !imgLoadError" :src="iconUrl" @error="handleError"></img>
+                <img v-if="!imgLoadError" :src="iconUrl" @error="handleError"></img>
                 <h2 :title="name">{{ name }}</h2>
             </div>
             <p :title="description">{{ description }}</p>

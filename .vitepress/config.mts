@@ -9,8 +9,21 @@ export default defineConfig({
   srcDir: "src",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [{ text: "导航", link: "/" }],
-
+    nav: [
+      { text: "导航", link: "/" },
+      {
+        text: "踩坑记录",
+        items: [{ text: "vitepress踩坑", link: "/pitfall/vitepress" }],
+      },
+    ],
+    sidebar: {
+      "/pitfall/": [
+        {
+          text: "vitepress踩坑",
+          link: "/pitfall/vitepress",
+        },
+      ],
+    },
     socialLinks: [{ icon: "github", link: "https://github.com/koitori777" }],
     aside: true,
     outline: {

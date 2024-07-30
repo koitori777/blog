@@ -11,26 +11,31 @@
       {
         "name": "张鑫旭的个人主页",
         "description":"张鑫旭的个人主页，分享前端技术、设计、产品、运营等方面的文章。",
+        "icon":"/icons/zhangxinyu.ico",
         "link": "https://www.zhangxinxu.com/"
       },
       {
         "name": "科技爱好者周刊",
         "description":"科技爱好者周刊，每周推送科技新闻、资讯、观点。",
+        "icon":"/icons/shu.ico",
         "link": "https://www.ruanyifeng.com/blog/archives.html"
       },
       {
         "name": "零度解说",
         "description":"零度解说，关注零度科技的最新资讯。",
+        "icon":"/icons/free.ico",
         "link": "https://www.freedidi.com/"
       },
       {
         "name": "乜都讲D",
         "description":"Galgame解包记录，解包工具相关",
+        "icon":"/icons/ztj.ico",
         "link": "https://blog.ztjal.info/"
       },
       {
         "name": "茂茂物语",
         "description":"茂茂物语，前端技术博客。",
+        "icon":"/icons/maomao.ico",
         "link": "https://notes.fe-mm.com/"
       },
       {
@@ -52,27 +57,31 @@
       {
         "name": "transform",
         "description":"支持不同语言之间的互相转换",
-        "icon":"https://transform.tools/static/favicon.png",
+        "icon":"/icons/transform.png",
         "link": "https://transform.tools/"
       },
       {
         "name": "开发者武器库",
         "description":"开发者武器库，收集各种开发者工具。",
+        "icon":"/icons/dev.svg",
         "link": "https://devtool.tech/"
       },
       {
         "name": "Arya",
         "description":"Arya，在线Markdown编辑器。",
+        "icon":"/icons/arya.png",
         "link": "https://markdown.lovejade.cn/"
       },
       {
         "name": "ioReader",
         "description":"ioReader，RSS 阅读器。",
+        "icon":"/icons/ioreader.ico",
         "link": "https://www.inoreader.com/dashboard"
       },
       {
         "name": "RssHub",
         "description":"RssHub，RSS 聚合器。",
+        "icon":"/icons/rss.ico",
         "link": "https://docs.rsshub.app/"
       },
       {
@@ -90,6 +99,7 @@
       {
         "name": "MindMaster",
         "description":"MindMaster，思维导图工具。",
+        "icon":"/icons/mm.ico",
         "link": "https://mm.edrawsoft.cn/"
       },
       {
@@ -106,6 +116,7 @@
       {
         "name": "ES6入门教程",
         "description":"ES6入门教程，阮一峰老师的教程。",
+        "icon":"/icons/es6.ico",
         "link": "https://es6.ruanyifeng.com/"
       },
       {
@@ -128,6 +139,7 @@
       {
         "name": "Modern Web",
         "description":"Modern Web，Web开发新时代",
+        "icon":"/icons/modern-web.png",
         "link": "https://modern-web.dev/"
       },
       {
@@ -174,13 +186,13 @@
       {
         "name": "React",
         "description":"Facebook 推出的 JavaScript 库，用于构建用户界面的 UI 组件。",
-        "icon":"https://react.dev/favicon-32x32.png",
+        "icon":"/icons/react.png",
         "link": "https://react.dev/"
       },
       {
         "name": "Svelte",
         "description":"更加轻量的 JavaScript框架",
-        "icon":"https://svelte.dev/favicon.png",
+        "icon":"/icons/svelte.png",
         "link": "https://svelte.dev/"
       },
       {
@@ -192,11 +204,13 @@
       {
         "name": "Preact",
         "description":"更小的 React，更快的 React",
+        "icon":"/icons/preact.ico",
         "link": "https://preactjs.com/"
       },
       {
         "name": "JQuery",
         "description":"JQuery，前端开发工具库。",
+        "icon":"/icons/jquery.ico",
         "link": "https://jquery.com/"
       },
       {
@@ -208,12 +222,13 @@
       {
         "name": "WebComponents",
         "description":"Web Components 是一组标准，允许开发者创建可重用的自定义元素，并在 Web 应用中使用它们，而无需担心命名冲突",
+        "icon":"/icons/webcomponents.svg",
         "link": "https://www.webcomponents.org/"
       },
       {
         "name": "Chart.js",
         "description":"一个强大且易于使用的图表库，适用于各种 Web 应用",
-        "icon":"",
+        "icon":"/icons/chartjs.ico",
         "link": "https://www.chartjs.org/"
       },
       {
@@ -236,6 +251,7 @@
       {
         "name": "Stylus",
         "description":"灵活的CSS预处理器，语法简洁且富有表现力",
+        "icon":"/icons/stylus.ico",
         "link": "https://stylus-lang.com/"
       },
       {
@@ -358,7 +374,7 @@
         {
             "name": "Powershell社区",
             "description":"PowerShell技术问答社区。",
-            "icon":"",
+            "icon":"/icons/psh.ico",
             "link": "https://www.pstips.net/"
         }
     ]
@@ -393,7 +409,7 @@
         {
             "name": "Wildcard",
             "description":"虚拟信用卡，提供信用卡服务。",
-            "icon":"",
+            "icon":"/icons/wcard.ico",
             "link": "https://wildcard.com.cn/"
         }
     ]
@@ -500,6 +516,7 @@
       {
         "name": "创造狮导航",
         "description":"创意设计相关站点导航",
+        "icon":"/icons/create.png",
         "link": "https://chuangzaoshi.com/"
       }
     ]
