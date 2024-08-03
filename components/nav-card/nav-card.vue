@@ -18,7 +18,7 @@ const props = defineProps<{ site: NavSite }>()
 
 const { icon, name, description, link } = toRefs(props.site)
 
-const imgLoadError = ref(false).
+const imgLoadError = ref(false)
 
 const iconUrl = ref('')
 if (icon?.value) {
